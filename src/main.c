@@ -14,5 +14,4 @@ int main() {
     insertAVLTree(&tree, i);
   }
   displayAVLTree(&tree);
-  printf("hello world\n");
 }
