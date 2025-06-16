@@ -1,0 +1,19 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "Clang 18.1.6 x86_64-w64-windows-gnu (clang64)",
+      "displayName": "Clang 18.1.6 x86_64-w64-windows-gnu (clang64)",
+      "description": "正在使用编译器: C = E:\\msys64\\clang64\\bin\\clang.exe, CXX = E:\\msys64\\clang64\\bin\\clang++.exe",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/bulid/install",
+        "CMAKE_C_COMPILER": "E:/msys64/clang64/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "E:/msys64/clang64/bin/clang++.exe",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ]
+}
