@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 static AVLNode *rotateL(AVLNode *root);
 static AVLNode *rotateR(AVLNode *root);
@@ -103,73 +102,5 @@ void inOrder(AVLNode *root) {
 
 void inOrderAVLTree(AVLTree *tree) {
   inOrder(tree->root);
-  printf("\n");
-}
-
-void printNode(AVLNode *root, int height, bool isleft, AVLNode *parent, int cnt,
-               int length) {
-  for (int i = 0; i < height + length; i++) {
-    printf(" ");
-  }
-
-  if (parent) {
-    printf(" %s", isleft ? "└" : "┌");
-  }
-  printf("%d", root->val);
-  if (root->left || root->right) {
-    if (!root->left) {
-      printf("┘");
-    } else if (!root->right) {
-      printf("┐");
-    } else {
-      printf("┤");
-    }
-  }
-  printf("\n");
-}
-
-void dfs(AVLNode *root, bool isleft, int height, AVLNode *parent, int cnt,
-         int length) {
-  if (!root) {
-    return;
-  }
-  int val = root->val;
-  int len = 0;
-  while (val) {
-    len++;
-    val /= 10;
-  }
-  dfs(root->right, false, height + 1, root, cnt + (isleft && parent),
-      length + len);
-  printNode(root, height, isleft, parent, cnt, length);
-  dfs(root->left, true, height + 1, root, cnt + (!isleft && parent),
-      length + len);
-}
-
-int getNumCount(int num) {
-  int len = 0;
-  while (num) {
-    num /= 10;
-    ++len;
-  }
-  return len;
-}
-
-void dfs2(AVLNode *root, char *str, AVLNode *parent) {
-  if (!root) {
-    return;
-  }
-  int len = getNumCount(root->val);
-  char str2[len];
-  memset(str2, ' ', len);
-  dfs2(root->right, str, root);
-  dfs2(root->left, str, root);
-};
-
-void displayAVLTree(AVLTree *tree) {
-  if (!tree->root) {
-    return;
-  }
-  dfs(tree->root, true, 0, NULL, 0, 0);
   printf("\n");
 }

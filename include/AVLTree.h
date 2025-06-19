@@ -18,5 +18,3 @@ int getHeight(AVLNode *node);
 void insertAVLTree(AVLTree *tree, int val);
 
 void inOrderAVLTree(AVLTree *tree);
-
-void displayAVLTree(AVLTree *tree);

@@ -1,17 +1,15 @@
 #include "AVLTree.h"
-#include "Queue.h"
+#include "DisplayBinaryTree.h"
 #include <limits.h>
-#include <math.h>
+#include <locale.h>
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main() {
+  setlocale(LC_ALL, "");
   AVLTree tree;
   initAVLTree(&tree);
-  for (int i = 0; i < 20; i++) {
+  for (int i = 90; i < 110; i++) {
     insertAVLTree(&tree, i);
   }
-  displayAVLTree(&tree);
+  displayBinaryTree(tree.root);
 }
